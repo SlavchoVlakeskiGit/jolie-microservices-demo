@@ -1,5 +1,3 @@
-A microservice-based distributed system built with Jolie demonstrating peer registration and service communication.
-
 # Jolie Microservices Demo
 
 A simple distributed system built using the Jolie programming language to demonstrate microservice communication, service interfaces, and peer registration.
@@ -78,11 +76,6 @@ Or run the automated demo:
 ```
 bash scripts/run_demo.sh
 ```
-
-## Example Output
-
-Sending join request to server...
-Response from service: Benvenuto Jeer! Gateway received your request.
 
 ## Purpose
 
