@@ -1,17 +1,26 @@
+A microservice-based distributed system built with Jolie demonstrating peer registration and service communication.
+
 # Jolie Microservices Demo
 
-This project demonstrates a simple microservice architecture built using the Jolie programming language.
+A simple distributed system built using the Jolie programming language to demonstrate microservice communication, service interfaces, and peer registration.
 
 ## Architecture
 
-![Architecture](architecture/architecture.png)
+Client → Gateway Service → Peer Service
 
-The system consists of:
-- **Client**
-- **Gateway service (`serverJeerTest.ol`)**
-- **Microservice (`jeer.ol`)**
+The system contains three components:
 
-The gateway receives requests and communicates with the microservice using Jolie interfaces.
+- **Gateway Service** – handles peer registration
+- **Peer Service (Jeer)** – registers itself and exposes a peer-to-peer operation
+- **Client** – sends a request to the gateway
+
+## Features
+
+- Microservice architecture
+- Gateway service pattern
+- Peer registration system
+- Peer-to-peer communication
+- Configurable ports via configuration file
 
 ## Project Structure
 
@@ -25,8 +34,14 @@ jolie-microservices-demo
 ├── interfaces
 │   └── Interface.iol
 │
-├── architecture
-│   └── architecture.png
+├── client
+│   └── client.ol
+│
+├── config
+│   └── ports.iol
+│
+├── scripts
+│   └── run_demo.sh
 │
 └── README.md
 ```
@@ -34,26 +49,41 @@ jolie-microservices-demo
 ## Technologies
 
 - Jolie
-- Microservices
 - Service-Oriented Architecture (SOA)
+- Microservices
+- SODEP protocol
 
 ## How to Run
 
-1. Install Jolie:
-https://www.jolie-lang.org/
-
-2. Start the gateway service:
+Start the gateway service:
 
 ```
 jolie services/serverJeerTest.ol
 ```
 
-3. Run the microservice:
+Start the peer service:
 
 ```
 jolie services/jeer.ol
 ```
 
+Run the client:
+
+```
+jolie client/client.ol
+```
+
+Or run the automated demo:
+
+```
+bash scripts/run_demo.sh
+```
+
+## Example Output
+
+Sending join request to server...
+Response from service: Benvenuto Jeer! Gateway received your request.
+
 ## Purpose
 
-This project was originally developed as a university assignment to demonstrate service-oriented microservice communication using Jolie.
+This project was developed as part of a university assignment to explore distributed systems and microservice communication using Jolie.
