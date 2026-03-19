@@ -1,82 +1,97 @@
 # Jolie Microservices Demo
 
-A simple distributed system built using the Jolie programming language to demonstrate microservice communication, service interfaces, and peer registration.
+A small distributed systems demo built with the Jolie programming language to show service communication, peer registration, and gateway-based request flow.
 
-## Architecture
-
-Client → Gateway Service → Peer Service
-
-The system contains three components:
-
-- **Gateway Service** – handles peer registration
-- **Peer Service (Jeer)** – registers itself and exposes a peer-to-peer operation
-- **Client** – sends a request to the gateway
+This project was created to explore service-oriented design in a lightweight academic but still practical format.
 
 ## Features
 
-- Microservice architecture
-- Gateway service pattern
-- Peer registration system
-- Peer-to-peer communication
-- Configurable ports via configuration file
-
-## Project Structure
-
-```
-jolie-microservices-demo
-│
-├── services
-│   ├── jeer.ol
-│   └── serverJeerTest.ol
-│
-├── interfaces
-│   └── Interface.iol
-│
-├── client
-│   └── client.ol
-│
-├── config
-│   └── ports.iol
-│
-├── scripts
-│   └── run_demo.sh
-│
-└── README.md
-```
+- Gateway service for routing requests
+- Peer registration flow
+- Peer-to-peer style communication through Jolie services
+- Configurable ports through shared configuration
+- Simple runnable demo for distributed system concepts
 
 ## Technologies
 
-- Jolie
-- Service-Oriented Architecture (SOA)
-- Microservices
-- SODEP protocol
+- **Language:** Jolie
+- **Architecture:** Service-Oriented Architecture (SOA)
+- **Concepts:** Microservices, service communication, peer registration, SODEP protocol
+
+## Project Structure
+
+```text
+jolie-microservices-demo/
+│
+├── services/
+│   ├── jeer.ol
+│   └── serverJeerTest.ol
+├── interfaces/
+│   └── Interface.iol
+├── client/
+│   └── client.ol
+├── config/
+│   └── ports.iol
+├── scripts/
+│   └── run_demo.sh
+└── README.md
+```
+
+## Architecture
+
+```text
+Client → Gateway Service → Peer Service
+```
+
+### Components
+
+- **Gateway Service** — handles peer registration and request flow
+- **Peer Service** — registers itself and exposes operations
+- **Client** — sends a request through the gateway
 
 ## How to Run
 
-Start the gateway service:
+### Start the gateway service
 
-```
+```bash
 jolie services/serverJeerTest.ol
 ```
 
-Start the peer service:
+### Start the peer service
 
-```
+```bash
 jolie services/jeer.ol
 ```
 
-Run the client:
+### Run the client
 
-```
+```bash
 jolie client/client.ol
 ```
 
-Or run the automated demo:
+### Or run the demo script
 
-```
+```bash
 bash scripts/run_demo.sh
 ```
 
-## Purpose
+## What This Project Demonstrates
 
-This project was developed as part of a university assignment to explore distributed systems and microservice communication using Jolie.
+- Basic microservice communication in Jolie
+- Service interface separation
+- Gateway pattern fundamentals
+- Configurable distributed service setup
+
+## Limitations
+
+- Small demo scope
+- Intended for learning and experimentation rather than production use
+- No persistence or advanced fault tolerance
+
+## Why I Built This
+
+I built this project to explore distributed systems concepts and get hands-on experience with Jolie and service-oriented communication patterns.
+
+## Author
+
+**Slavcho Vlakeski**
