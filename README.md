@@ -1,28 +1,39 @@
 # Jolie Microservices Demo
 
-A small distributed systems demo built with the Jolie programming language to show service communication, peer registration, and gateway-based request flow.
+A small distributed-system demo built with Jolie to explore service communication, peer registration, and basic interaction between components.
 
-This project was created to explore service-oriented design in a lightweight academic but still practical format.
+This repo is more of a focused technical demo than a product-style application. I built it mostly because I wanted to try something outside the usual Java/Python stack.
 
-## Features
+## What it shows
 
-- Gateway service for routing requests
-- Peer registration flow
-- Peer-to-peer style communication through Jolie services
-- Configurable ports through shared configuration
-- Simple runnable demo for distributed system concepts
+- gateway-based request flow
+- peer registration
+- service-to-service communication
+- configurable ports through shared configuration
+- a simple runnable demo for distributed system concepts
 
 ## Technologies
 
-- **Language:** Jolie
-- **Architecture:** Service-Oriented Architecture (SOA)
-- **Concepts:** Microservices, service communication, peer registration, SODEP protocol
+- Jolie
+- Service-Oriented Architecture (SOA)
+- SODEP protocol
 
-## Project Structure
+## Architecture
+
+```text
+Client → Gateway Service → Peer Service
+```
+
+### Components
+
+- **Gateway Service** — handles peer registration and request flow
+- **Peer Service** — registers itself and exposes operations
+- **Client** — sends a request through the gateway
+
+## Project structure
 
 ```text
 jolie-microservices-demo/
-│
 ├── services/
 │   ├── jeer.ol
 │   └── serverJeerTest.ol
@@ -37,19 +48,7 @@ jolie-microservices-demo/
 └── README.md
 ```
 
-## Architecture
-
-```text
-Client → Gateway Service → Peer Service
-```
-
-### Components
-
-- **Gateway Service** — handles peer registration and request flow
-- **Peer Service** — registers itself and exposes operations
-- **Client** — sends a request through the gateway
-
-## How to Run
+## Run the demo
 
 ### Start the gateway service
 
@@ -75,23 +74,15 @@ jolie client/client.ol
 bash scripts/run_demo.sh
 ```
 
-## What This Project Demonstrates
+## Notes
 
-- Basic microservice communication in Jolie
-- Service interface separation
-- Gateway pattern fundamentals
-- Configurable distributed service setup
+I would treat this repo as a compact technical experiment rather than a production-style microservices project. The main value for me was understanding the communication flow and getting hands-on practice with an unfamiliar stack.
 
-## Limitations
+## Possible next improvements
 
-- Small demo scope
-- Intended for learning and experimentation rather than production use
-- No persistence or advanced fault tolerance
+- cleaner run script
+- better message-flow documentation
+- a simple diagram of service interaction
+- more example requests
 
-## Why I Built This
-
-I built this project to explore distributed systems concepts and get hands-on experience with Jolie and service-oriented communication patterns.
-
-## Author
-
-**Slavcho Vlakeski**
+The setup is intentionally small, just enough to understand how the pieces communicate.
